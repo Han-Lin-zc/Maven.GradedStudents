@@ -13,6 +13,11 @@ public class Student {
         this.lastName = lastName;
     }
 
+    public Student() {
+        this.firstName = "Leon";
+        this.lastName = "Hunter";
+    }
+
     public String getFirstName() { return this.firstName; }
 
     public void setFirstName(String firstName) { this.firstName = firstName; };
@@ -24,8 +29,6 @@ public class Student {
     public Double getNumberOfExamsTaken() { return null;}
 
     public Double getExamScores() {
-        this.firstName = "Leon";
-        this.lastName = "Hunter";
         Double[] examScores = { 100.0 , 95.0, 123.0, 96.0};
 
         return null;
