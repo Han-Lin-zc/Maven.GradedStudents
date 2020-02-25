@@ -29,7 +29,6 @@ public class Student {
     public Double getNumberOfExamsTaken() { return null;}
 
     public Double[] getExamScores() {
-        Double[] examScores = { 100.0 , 95.0, 123.0, 96.0};
-        return examScores;
+        return new Double[]{100.0 , 95.0, 123.0, 96.0};
     }
 }

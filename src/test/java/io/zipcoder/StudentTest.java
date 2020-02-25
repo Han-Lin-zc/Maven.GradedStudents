@@ -5,9 +5,10 @@ import org.junit.Test;
 
 public class StudentTest {
 
+    Student s = new Student();
+
     @Test
     public void testGetFirstName() {
-        Student s = new Student();
         String expected = "Leon";
         String actual = s.getFirstName();
         Assert.assertEquals(expected,actual);
@@ -38,8 +39,10 @@ public class StudentTest {
     }
 
     @Test
-    public void getExamScores() {
+    public void getExamScoresTest() {
+        Student student = new Student();
         Double[] expected = { 100.0 , 95.0, 123.0, 96.0};
-       // Double[] actual = Student.get
+        Double[] actual = student.getExamScores();
+        Assert.assertEquals(expected, actual);
     }
 }

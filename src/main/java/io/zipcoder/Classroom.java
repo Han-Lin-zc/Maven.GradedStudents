@@ -14,7 +14,7 @@ public class Classroom {
     public Classroom (Student[] students) {}
 
     public Classroom () {
-        Student[] students = new Student[30];
+        Student[] students = new Student[4];
     }
 
     public Integer getStudents () {
