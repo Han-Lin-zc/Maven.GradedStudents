@@ -3,6 +3,8 @@ package io.zipcoder;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class ClassroomTest {
 
 
@@ -14,11 +16,14 @@ public class ClassroomTest {
 
 
     @Test
-    public void getStudents() {
+    public void getStudentsTest() {
+        classroom.addStudent(student1);
+        classroom.addStudent(student2);
+        classroom.addStudent(student3);
     }
 
     @Test
-    public void getAverageExamScore() {
+    public void getAverageExamScoreTest() {
         Double expected = (student1.getAverageExamScore() + student2.getAverageExamScore()
                          + student3.getAverageExamScore()) / 3.0;
         classroom.addStudent(student1);
@@ -28,11 +33,25 @@ public class ClassroomTest {
     }
 
     @Test
-    public void addStudent() {
+    public void addStudentTest() {
+        classroom.addStudent(student1);
+        classroom.addStudent(student2);
+        classroom.addStudent(student3);
+        Assert.assertEquals(3, classroom.getStudents().size());
 
     }
 
     @Test
-    public void removeStudent() {
+    public void removeStudentTest() {
+        classroom.addStudent(student1);
+        classroom.addStudent(student2);
+        classroom.addStudent(student3);
+        classroom.removeStudent(student2);
+        Assert.assertEquals(2, classroom.getStudents().size());
+    }
+
+    @Test
+    public void getStudentsByScoreTest() {
+
     }
 }

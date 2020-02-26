@@ -37,10 +37,12 @@ public class Classroom {
         this.students.add(student);
     }
 
-    public void removeStudent (String firstName, String lastName){
-
+    public void removeStudent (Student student){
+        this.students.remove(student);
     }
 
-
+    public Student getStudentByScore() {
+        return null;
+    }
 
 }
