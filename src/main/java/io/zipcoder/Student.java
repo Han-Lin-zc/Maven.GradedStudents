@@ -1,6 +1,7 @@
 package io.zipcoder;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Student {
 
@@ -11,11 +12,14 @@ public class Student {
     public Student (String firstName, String lastName, Double[] testScores) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.examScores = new ArrayList<>();
+        Collections.addAll(examScores, testScores);
     }
 
     public Student() {
         this.firstName = "Leon";
         this.lastName = "Hunter";
+        this.examScores = new ArrayList<>();
     }
 
     public String getFirstName() { return this.firstName; }
@@ -24,11 +28,42 @@ public class Student {
 
     public String getLastName() { return this.lastName; }
 
-    public void setLastName() { this.lastName = lastName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
 
-    public Double getNumberOfExamsTaken() { return null;}
+    public Integer getNumberOfExamsTaken() { return null;}
 
-    public Double[] getExamScores() {
-        return new Double[]{100.0 , 95.0, 123.0, 96.0};
+    public String getExamScores() {
+        String result = "Exam Scores:";
+        for (int i = 0; i < examScores.size(); i++) {
+            result += "\nExam " + (i + 1) + " -> " + examScores.get(i);
+        }
+        return result;
+    }
+
+    public void addExamScore(double examScore) {
+        this.examScores.add(examScore);
+    }
+
+    public void setExamScores (int examNumber, double newScore) {
+        this.examScores.set(examNumber, newScore);
+    }
+
+    public Double getAverageExamScore() {
+        Double result = 0.0;
+        for (Double examScore : examScores) {
+            result += examScore;
+        }
+        return result / examScores.size();
+    }
+
+    @Override
+    public String toString() {
+        String result = "Student Name: ";
+        for (int i = 0; i < examScores.size(); i++) {
+            result += firstName + " " + lastName + "\n> Average Score: "
+                    + getAverageExamScore() + "\n> Exam Scores:" + "\nExam "
+                    + (i + 1) + " -> " + examScores.get(i);
+        }
+        return result;
     }
 }
