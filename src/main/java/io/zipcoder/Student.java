@@ -9,6 +9,7 @@ public class Student {
     private String lastName;
     private ArrayList<Double> examScores;
 
+
     public Student (String firstName, String lastName, Double[] testScores) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -30,7 +31,8 @@ public class Student {
 
     public void setLastName(String lastName) { this.lastName = lastName; }
 
-    public Integer getNumberOfExamsTaken() { return null;}
+    public Integer getNumberOfExamsTaken() { return examScores.size();}
+
 
     public String getExamScores() {
         String result = "Exam Scores:";
@@ -40,13 +42,16 @@ public class Student {
         return result;
     }
 
+
     public void addExamScore(double examScore) {
         this.examScores.add(examScore);
     }
 
+
     public void setExamScores (int examNumber, double newScore) {
         this.examScores.set(examNumber, newScore);
     }
+
 
     public Double getAverageExamScore() {
         Double result = 0.0;
@@ -55,6 +60,7 @@ public class Student {
         }
         return result / examScores.size();
     }
+
 
     @Override
     public String toString() {

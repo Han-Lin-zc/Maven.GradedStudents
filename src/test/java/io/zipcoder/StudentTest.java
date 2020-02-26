@@ -3,7 +3,6 @@ package io.zipcoder;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
 
 public class StudentTest {
 
@@ -41,8 +40,9 @@ public class StudentTest {
 
     @Test
     public void getNumberOfExamsTaken() {
-        Integer expected = 30;
-        Assert.assertEquals(expected, s.getExamScores());
+        Student student = new Student("Han", "Lin", new Double[]{100.0, 99.0, 90.0});
+        Integer expected = 3;
+        Assert.assertEquals(expected, student.getNumberOfExamsTaken());
     }
 
     @Test
@@ -61,8 +61,9 @@ public class StudentTest {
 
     @Test
     public void setExamScoreTest() {
-        s.setExamScores(0, 90.0);
-        String expected = "Exam Scores:\nExam 1 -> 90.0";
+        s.addExamScore(90.0);
+        s.setExamScores(0, 80.0);
+        String expected = "Exam Scores:\nExam 1 -> 80.0";
         Assert.assertEquals(expected, s.getExamScores());
     }
 
