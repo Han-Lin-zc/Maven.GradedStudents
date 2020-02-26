@@ -58,11 +58,10 @@ public class Student {
 
     @Override
     public String toString() {
-        String result = "Student Name: ";
+        String result = "Student Name: " + firstName + " " + lastName + "\n> Average Score: "
+                + getAverageExamScore() + "\n> Exam Scores:";
         for (int i = 0; i < examScores.size(); i++) {
-            result += firstName + " " + lastName + "\n> Average Score: "
-                    + getAverageExamScore() + "\n> Exam Scores:" + "\nExam "
-                    + (i + 1) + " -> " + examScores.get(i);
+            result += "\nExam " + (i + 1) + " -> " + examScores.get(i);
         }
         return result;
     }
