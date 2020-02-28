@@ -5,8 +5,8 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-public class ClassroomTest {
 
+public class ClassroomTest {
 
     Classroom classroom = new Classroom();
     Student student1 = new Student("Han", "Lin", new Double[]{100.0, 90.0, 80.0});
@@ -20,6 +20,11 @@ public class ClassroomTest {
         classroom.addStudent(student1);
         classroom.addStudent(student2);
         classroom.addStudent(student3);
+        ArrayList<Student> expected = new ArrayList<>();
+        expected.add(student1);
+        expected.add(student2);
+        expected.add(student3);
+        Assert.assertEquals(expected, classroom.getStudents());
     }
 
     @Test
