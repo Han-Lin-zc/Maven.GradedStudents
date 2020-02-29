@@ -72,7 +72,7 @@ public class StudentTest {
 
     @Test
     public void toStringTest() {
-        String expected = "Student Name: " + student.getFirstName() + " " + student.getLastName()
+        String expected = "\nStudent Name: " + student.getFirstName() + " " + student.getLastName()
                             + "\n> Average Score: " + student.getAverageExamScore()
                             + "\n> Exam Scores:" + "\nExam 1 -> 100.0\nExam 2 -> 90.0\nExam 3 -> 80.0";
         Assert.assertEquals(expected, student.toString());

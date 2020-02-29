@@ -1,6 +1,6 @@
 package io.zipcoder;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Classroom {
 
@@ -41,8 +41,10 @@ public class Classroom {
         this.students.remove(student);
     }
 
-    public Student getStudentByScore() {
-        return null;
+    public Collection<Student> getStudentByScore() {
+        Map<Double, Student> treeMap = new TreeMap<Double, Student>(Collections.reverseOrder());
+       // treeMap.put(getAverageExamScore(),getStudentByScore());
+        return treeMap.values();
     }
 
 }

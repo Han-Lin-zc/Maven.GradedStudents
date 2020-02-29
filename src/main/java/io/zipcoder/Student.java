@@ -64,7 +64,7 @@ public class Student {
 
     @Override
     public String toString() {
-        String result = "Student Name: " + firstName + " " + lastName + "\n> Average Score: "
+        String result = "\nStudent Name: " + firstName + " " + lastName + "\n> Average Score: "
                 + getAverageExamScore() + "\n> Exam Scores:";
         for (int i = 0; i < examScores.size(); i++) {
             result += "\nExam " + (i + 1) + " -> " + examScores.get(i);

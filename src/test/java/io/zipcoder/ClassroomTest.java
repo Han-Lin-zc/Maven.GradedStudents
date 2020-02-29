@@ -3,16 +3,15 @@ package io.zipcoder;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
+import java.util.*;
 
 
 public class ClassroomTest {
 
     Classroom classroom = new Classroom();
     Student student1 = new Student("Han", "Lin", new Double[]{100.0, 90.0, 80.0});
-    Student student2 = new Student("Adam", "Bennett", new Double[]{40.0, 50.0, 90.0});
+    Student student2 = new Student("Adam", "Bennett", new Double[]{40.0, 50.0, 70.0});
     Student student3 = new Student("Moe", "Ay", new Double[] { 80.0, 50.0, 70.0});
-
 
 
     @Test
@@ -57,6 +56,11 @@ public class ClassroomTest {
 
     @Test
     public void getStudentsByScoreTest() {
+        Map<Double, Student> treeMap = new TreeMap<Double, Student>(Collections.reverseOrder());
+        treeMap.put(student1.getAverageExamScore(), student1);
+        treeMap.put(student2.getAverageExamScore(), student2);
+        treeMap.put(student3.getAverageExamScore(), student3);
 
+        Assert.assertEquals((Student)treeMap.values(), classroom.getStudentByScore());
     }
 }
