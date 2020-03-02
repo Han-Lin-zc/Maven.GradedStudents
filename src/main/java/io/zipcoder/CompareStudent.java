@@ -7,6 +7,7 @@ public class CompareStudent implements Comparator<Student> {
     public int compare(Student student1, Student student2) {
 
         if (student1.getAverageExamScore().equals(student2.getAverageExamScore())) {
+
             if (student1.getLastName().equals(student2.getLastName())) {
                 return student1.getFirstName().compareTo(student2.getFirstName());
             } else {
@@ -19,8 +20,7 @@ public class CompareStudent implements Comparator<Student> {
             }
             if (student1.getAverageExamScore() < student2.getAverageExamScore()) {
                 return 1;
-        }
-
+            }
 
         }
         return 0;
