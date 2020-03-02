@@ -1,11 +1,8 @@
 package io.zipcoder;
-
 import java.util.*;
 
 public class Classroom {
 
-    private String firstName;
-    private String lastName;
     private ArrayList<Student> students = new ArrayList<>();
 
 
@@ -41,10 +38,15 @@ public class Classroom {
         this.students.remove(student);
     }
 
-    public Collection<Student> getStudentByScore() {
-        Map<Double, Student> treeMap = new TreeMap<Double, Student>(Collections.reverseOrder());
-       // treeMap.put(getAverageExamScore(),getStudentByScore());
-        return treeMap.values();
+    public Student[] getStudentByScore() {
+        CompareStudent compareStudent = new CompareStudent();
+        Collections.sort(students, compareStudent);
+        Student[] result = new Student[students.size()];
+
+        for (int i = 0; i < students.size(); i++) {
+            result[i] = students.get(i);
+        }
+        return result;
     }
 
 }
