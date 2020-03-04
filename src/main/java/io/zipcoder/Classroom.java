@@ -50,12 +50,25 @@ public class Classroom {
     }
 
     public Map<Student, Character> getGradeBook() {
+        Map<Student, Character> gradeBook = new LinkedHashMap<>();
         Student[] arr = getStudentByScore();
         double highestScore = arr[0].getAverageExamScore();
         double lowestScore = arr[arr.length - 1].getAverageExamScore();
 
-        
-        return null;
+        for (Student student : arr) {
+            if (student.getAverageExamScore() >= highestScore - 10) {
+                gradeBook.put(student, 'A');
+            } else if (student.getAverageExamScore() >= highestScore - 29) {
+                gradeBook.put(student, 'B');
+            } else if (student.getAverageExamScore() >= highestScore - 50) {
+                gradeBook.put(student, 'C');
+            } else if (student.getAverageExamScore() >= highestScore - 89) {
+                gradeBook.put(student, 'D');
+            } else {
+                gradeBook.put(student, 'F');
+            }
+        }
+        return gradeBook;
     }
 
 }
