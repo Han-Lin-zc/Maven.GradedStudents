@@ -82,9 +82,18 @@ public class ClassroomTest {
     @Test
     public void getGradeBookTest() {
         Map<Student, Character> expected = new HashMap<>();
+
+        Student student0 = new Student("Aeon", "Hunter", new Double[] {20.0, 30.0, 40.0});
+        classroom.addStudent(student0);
+
+        expected.put(student0, 'D');
+
+
         expected.put(student1, 'A');
         expected.put(student2, 'C');
         expected.put(student3, 'B');
+
+
         Assert.assertEquals(expected, classroom.getGradeBook());
     }
 }
