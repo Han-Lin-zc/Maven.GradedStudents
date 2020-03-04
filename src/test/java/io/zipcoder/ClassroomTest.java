@@ -77,6 +77,14 @@ public class ClassroomTest {
                     actualStudents[i].toString());
         }
         Assert.assertEquals(expectedStudent, actualStudents);
+    }
 
+    @Test
+    public void getGradeBookTest() {
+        Map<Student, Character> expected = new HashMap<>();
+        expected.put(student1, 'A');
+        expected.put(student2, 'C');
+        expected.put(student3, 'B');
+        Assert.assertEquals(expected, classroom.getGradeBook());
     }
 }

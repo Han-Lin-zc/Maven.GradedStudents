@@ -49,4 +49,13 @@ public class Classroom {
         return result;
     }
 
+    public Map<Student, Character> getGradeBook() {
+        Student[] arr = getStudentByScore();
+        double highestScore = arr[0].getAverageExamScore();
+        double lowestScore = arr[arr.length - 1].getAverageExamScore();
+
+        
+        return null;
+    }
+
 }
